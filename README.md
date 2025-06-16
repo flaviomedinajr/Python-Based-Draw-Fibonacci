@@ -14,6 +14,7 @@ It includes:
 - Drawing a colorful Fibonacci spiral using turtle graphics
 
 
+
 This project demonstrates how Python can be used for:
 
 - Mathematical computation (recursion, sequences)
