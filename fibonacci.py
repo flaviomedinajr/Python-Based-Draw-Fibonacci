@@ -84,12 +84,68 @@ def draw_fibonacci_spiral():
     recursion(a_b, 13) # Draw from the 13th Fibonacci number down
 
 
-# 
+# Helper function to recursively draw squares/arcs
 def recursion(a, s):
     # a is an array
     # s is size
     
-   
+    # Recursively draws square and arc for each Fibonacci number.
     if s < 1:
         return
     
+    draw_square(a[s])
+    draw_arc(a[s])
+    recursion(a, s - 1)
+
+
+
+# Draw a quarter-circle arc
+def draw_arc(r):
+    # r is radius
+
+    # Draws a 90-degree arc with given radius using turtle.circle.
+    turtle.pendown()
+    turtle.circle(-r, 90)
+    turtle.penup()
+
+
+
+# Draw a square with a random fill color
+def draw_square(s):
+    # s is side
+
+    # Draws a square of given side length and fills it with a random color.
+    turtle.pensize(2)
+
+    turtle.pendown()
+
+
+    turtle.colormode(255)
+    turtle.fillcolor(random.randint(0, 255), random.randint(0, 255),
+                     random.randint(0, 255))
+    turtle.begin_fill()
+    for _ in range(0, 4):
+        turtle.forward(s)
+        turtle.right(90)
+    turtle.penup()
+    turtle.end_fill()
+
+
+
+# Main driver function
+def main():
+    # This main function can test individual Fibonacci functions or draw the spiral.
+
+    # array = arrays.Array(20)
+    
+    # print(fibonacci(9))                     # Test 1: Fibonacci number
+    # print(fill_fibonacci_array(array))     # Test 2: Fill Fibonacci array
+    # print_ratios(fill_fibonacci_array(array))  # Test 3: Print ratios
+
+    draw_fibonacci_spiral()                  # Test 4: Draw the spiral
+    input("Enter to continue....")
+
+
+# Python standard entry point
+if __name__ == "__main__":
+    main()
