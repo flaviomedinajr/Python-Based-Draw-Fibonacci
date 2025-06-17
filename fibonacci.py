@@ -1,3 +1,5 @@
+# Author: Flavio Medina
+
 import arrays # External module for fixed-size arrays
 import turtle
 import random
